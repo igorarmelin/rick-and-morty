@@ -20,6 +20,8 @@ export const CharactersList = () => {
   const hasPrevPage = !!data.characters.info.prev
 
   return (
+    // @TODO: Criar card de listagem dos personagens
+    // @TODO: Criar componente de botão
     <>
       <ul>
         {data?.characters.results.map((character) => (

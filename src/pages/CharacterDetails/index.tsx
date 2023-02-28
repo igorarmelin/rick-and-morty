@@ -13,14 +13,20 @@ export const CharacterDetails = () => {
     }
   )
 
+  // @TODO: Criar componente de loading
   if (loading) return <p>Carregando...</p>
+
+  // @TODO: Criar componente de erro
   if (error) return <p>Erro</p>
+
+  // @TODO: Criar componente informando nenhum dado carregado
   if (!data) return <p>Nenhum dado foi carregado</p>
 
   const { episode, gender, image, location, name, species, status } =
     data?.character
 
   return (
+    // @TODO: Criar componente "Typography"
     <div>
       <img src={image} alt={`${name} image`} />
       <h2>{name}</h2>
