@@ -1,9 +1,16 @@
-export interface CharacterData {
-  id: number
+interface Character {
+  id: string
   name: string
-  image: string
 }
 
 export interface CharactersData {
-  results?: CharacterData[]
+  characters: {
+    info: {
+      count: number
+      pages: number
+      prev: number
+      next: number
+    }
+    results: Character[]
+  }
 }
