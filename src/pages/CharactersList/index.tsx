@@ -3,28 +3,27 @@ import { useQuery } from "@apollo/client"
 import { CHARACTERS } from "../../resources/graphql/characters/query"
 import { CharactersData } from "../../resources/graphql/characters/interfaces"
 import { Link } from "react-router-dom"
+import { Error, Loading, NoData } from "../../components"
 
-export const CharactersList = () => {
+const CharactersList = () => {
   const [page, setPage] = useState(1)
 
   const { loading, error, data } = useQuery<CharactersData>(CHARACTERS, {
     variables: { page },
   })
 
-  if (loading) return <p>Carregando...</p>
-  if (error) return <p>Erro</p>
-  if (!data) return <p>Nenhum dado foi carregado</p>
+  if (loading) return <Loading />
+  if (error) return <Error />
+  if (!data || !data.characters.results) return <NoData />
 
   const totalPages = data.characters.info.pages
   const hasNextPage = !!data.characters.info.next
   const hasPrevPage = !!data.characters.info.prev
 
   return (
-    // @TODO: Criar card de listagem dos personagens
-    // @TODO: Criar componente de botão
     <>
       <ul>
-        {data?.characters.results.map((character) => (
+        {data.characters.results.map((character) => (
           <li key={character.id}>
             <Link to={`/characters/${character.id}`}>{character.name}</Link>
           </li>

@@ -3,8 +3,9 @@ import { useParams } from "react-router-dom"
 import { useQuery } from "@apollo/client"
 import { CHARACTER_DETAILS } from "../../resources/graphql/characterDetails/query"
 import { CharacterDetailsData } from "../../resources/graphql/characterDetails/interfaces"
+import { Error, GoBack, Loading, NoData, Typography } from "../../components"
 
-export const CharacterDetails = () => {
+const CharacterDetails = () => {
   const { id } = useParams()
   const { loading, error, data } = useQuery<CharacterDetailsData>(
     CHARACTER_DETAILS,
@@ -13,36 +14,40 @@ export const CharacterDetails = () => {
     }
   )
 
-  // @TODO: Criar componente de loading
-  if (loading) return <p>Carregando...</p>
-
-  // @TODO: Criar componente de erro
-  if (error) return <p>Erro</p>
-
-  // @TODO: Criar componente informando nenhum dado carregado
-  if (!data) return <p>Nenhum dado foi carregado</p>
+  if (loading) return <Loading />
+  if (error) return <Error />
+  if (!data) return <NoData />
 
   const { episode, gender, image, location, name, species, status } =
-    data?.character
+    data.character ?? {}
 
   return (
-    // @TODO: Criar componente "Typography"
     <div>
-      <img src={image} alt={`${name} image`} />
-      <h2>{name}</h2>
-      <p>Status: {status}</p>
-      <p>Espécie: {species}</p>
-      <p>Genêro: {gender}</p>
-      <p>Localização: {location.name}</p>
-      <p>Tipo de localização: {location.type}</p>
-      <p>Episódios:</p>
-      <ul>
+      <div>
+        <img src={image} alt={`${name} image`} />
+
+        <Typography variant="h4">{name}</Typography>
+
+        <Typography variant="body1">Status:</Typography>
+        <Typography variant="body2">{status}</Typography>
+
+        <Typography variant="body1">Espécie</Typography>
+        <Typography variant="body2">{species}</Typography>
+
+        <Typography variant="body1">Gênero:</Typography>
+        <Typography variant="body2"> {gender}</Typography>
+
+        <Typography variant="body1">Localização: {location?.name}</Typography>
+        <Typography variant="body2">{location?.type}</Typography>
+
+        <Typography variant="body1">Episódios:</Typography>
         {episode.map((ep) => (
-          <li key={ep.id}>
+          <Typography variant="body2" key={ep.id}>
             {ep.name} ({ep.episode})
-          </li>
+          </Typography>
         ))}
-      </ul>
+      </div>
+      <GoBack />
     </div>
   )
 }
