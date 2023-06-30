@@ -1,9 +1,15 @@
 import React from "react"
-import { ContentStyled } from "./styles"
+import { ContentWrapper } from "./styles"
 import { MainProps } from "./interfaces"
+import { Header } from ".."
 
 export const Main: React.FC<MainProps> = ({ children }) => {
-  return <ContentStyled>{children}</ContentStyled>
+  return (
+    <>
+      <Header />
+      <ContentWrapper>{children}</ContentWrapper>
+    </>
+  )
 }
 
 export default Main

@@ -5,7 +5,7 @@ const globalStyle = createGlobalStyle`
     line-height: normal;
     margin: 0;
     padding: 0;
-    background-color: #ECEBF3;
+    background-color: #00bfff;
   }
 
   html,
@@ -14,8 +14,7 @@ const globalStyle = createGlobalStyle`
     width: 100%;
     min-height: 100%;
     height: auto;
-    display: flex;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 `
 

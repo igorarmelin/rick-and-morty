@@ -1,11 +1,9 @@
 import styled from "styled-components"
 
-export const ContentStyled = styled.div`
+export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1;
+  margin: 0 auto;
   max-width: 1080px;
-  overflow: auto;
   padding: 2rem;
-  width: 100%;
 `
