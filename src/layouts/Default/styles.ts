@@ -1,0 +1,23 @@
+import styled from "styled-components"
+import Paper from "../../components/Paper"
+
+export const MainStyled = styled.main`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`
+
+export const SectionStyled = styled.section`
+  flex: 1;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  padding: 24px;
+  background-color: #4354;
+`
+
+export const PaperStyled = styled(Paper)`
+  width: 100%;
+  max-width: 1200px;
+`

@@ -25,7 +25,7 @@ const CharactersList = () => {
       <ul>
         {data.characters.results.map((character) => (
           <li key={character.id}>
-            <Link to={`/characters/${character.id}`}>{character.name}</Link>
+            <Link to={`/personagem/${character.id}`}>{character.name}</Link>
           </li>
         ))}
       </ul>

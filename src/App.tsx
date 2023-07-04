@@ -1,15 +1,12 @@
-import React from "react"
-import { Route, Routes } from "react-router-dom"
-import { CharacterDetails, CharactersList } from "./pages"
+import Router from "./router"
+import { ApolloProvider } from "@apollo/client"
+import client from "./resources/api/graphql"
 
-function App() {
+const App = () => {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<CharactersList />} />
-        <Route path="/characters/:id" element={<CharacterDetails />} />
-      </Routes>
-    </>
+    <ApolloProvider client={client}>
+      <Router />
+    </ApolloProvider>
   )
 }
 

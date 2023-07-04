@@ -1,8 +1,20 @@
-import React from "react"
-import { Typography as TypographyMUI, TypographyProps } from "@material-ui/core"
+import { Typography as TypographyMui, TypographyProps } from "@mui/material"
 
-const Typography = ({ children, ...props }: TypographyProps) => {
-  return <TypographyMUI {...props}>{children}</TypographyMUI>
-}
+const Typography = ({
+  children,
+  variant = "body1",
+  color = "#393e41",
+  fontFamily = "montserrat",
+  ...props
+}: TypographyProps) => (
+  <TypographyMui
+    fontFamily={fontFamily}
+    color={color}
+    variant={variant}
+    {...props}
+  >
+    {children}
+  </TypographyMui>
+)
 
 export default Typography
