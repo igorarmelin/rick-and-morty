@@ -5,7 +5,7 @@ import { CHARACTER_DETAILS } from "../../resources/graphql/characterDetails/quer
 import { CharacterDetailsData } from "../../resources/graphql/characterDetails/interfaces"
 import { Error, GoBack, Loading, NoData, Typography } from "../../components"
 
-const CharacterDetails = () => {
+const CharacterDetailsPage = () => {
   const { id } = useParams()
   const { loading, error, data } = useQuery<CharacterDetailsData>(
     CHARACTER_DETAILS,
@@ -52,4 +52,4 @@ const CharacterDetails = () => {
   )
 }
 
-export default CharacterDetails
+export default CharacterDetailsPage

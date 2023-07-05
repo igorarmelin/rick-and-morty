@@ -12,6 +12,7 @@ export const CHARACTERS = gql`
       results {
         id
         name
+        image
       }
     }
   }

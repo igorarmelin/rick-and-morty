@@ -3,7 +3,7 @@ import {
   LoadingStyled,
   ContainerStyled,
   CircularIconStyled,
-  LogoStyled,
+  ImageStyled,
 } from "./styles"
 
 const Loading = ({ full = false, style, className }: LoadingProps) => {
@@ -19,9 +19,7 @@ const Loading = ({ full = false, style, className }: LoadingProps) => {
     >
       <ContainerStyled>
         <CircularIconStyled />
-        <LogoStyled>
-          <img src={imageUrl} alt="Logo" />
-        </LogoStyled>
+        <ImageStyled src={imageUrl} alt="Logo" />
       </ContainerStyled>
     </LoadingStyled>
   )

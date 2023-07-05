@@ -14,7 +14,7 @@ export const SectionStyled = styled.section`
   align-items: start;
   justify-content: center;
   padding: 24px;
-  background-color: #4354;
+  background-color: #00bfff;
 `
 
 export const PaperStyled = styled(Paper)`

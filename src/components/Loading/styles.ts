@@ -17,7 +17,7 @@ export const LoadingStyled = styled.div<LoadingStyledProps>`
           bottom: 0;
           z-index: 999;
           position: fixed;
-          background-color: #c200ff;
+          background-color: #00ffbf;
         `
       : css`
           padding: 40px 0px;
@@ -31,11 +31,9 @@ export const ContainerStyled = styled.div`
   justify-content: center;
 `
 
-export const LogoStyled = styled.div`
-  img {
-    max-width: 72px;
-    max-height: 72px;
-  }
+export const ImageStyled = styled.img`
+  max-width: 72px;
+  max-height: 72px;
 `
 
 export const CircularIconStyled = styled.div`
@@ -43,7 +41,7 @@ export const CircularIconStyled = styled.div`
   height: 90px;
   position: absolute;
   animation: spin 0.7s linear infinite;
-  border-color: transparent transparent transparent #00ffbf;
+  border-color: transparent transparent transparent #c200ff;
   border-style: solid;
   border-width: 8px;
   border-radius: 50%;
