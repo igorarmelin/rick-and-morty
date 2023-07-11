@@ -1,11 +1,12 @@
 import React from "react"
 import { PageCounterProps } from "./interfaces"
+import Typography from "../Typography"
 
 const PageCounter = ({ currentPage, totalPages }: PageCounterProps) => {
   return (
-    <p>
+    <Typography fontWeight="900" fontSize="1rem">
       Página {currentPage} de {totalPages}
-    </p>
+    </Typography>
   )
 }
 

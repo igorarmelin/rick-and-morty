@@ -8,7 +8,7 @@ export default ({ children }: PropsWithChildren) => {
     <MainStyled>
       <Header />
       <SectionStyled>
-        <PaperStyled style={{ padding: "16px 24px" }}>
+        <PaperStyled style={{ padding: "32px" }}>
           {children || <Outlet />}
         </PaperStyled>
       </SectionStyled>

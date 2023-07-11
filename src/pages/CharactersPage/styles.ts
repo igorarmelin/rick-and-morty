@@ -11,3 +11,10 @@ export const CharactersPageStyled = styled.div`
     flex-wrap: wrap;
   }
 `
+
+export const PaginationInfoStyled = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+`

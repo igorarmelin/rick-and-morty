@@ -1,5 +1,6 @@
 import React from "react"
 import { PaginationProps } from "./interfaces"
+import { Button } from ".."
 
 const Pagination = ({
   hasPrevPage,
@@ -9,8 +10,21 @@ const Pagination = ({
 }: PaginationProps) => {
   return (
     <div>
-      {hasPrevPage && <button onClick={onPrevPage}>Anterior</button>}
-      {hasNextPage && <button onClick={onNextPage}>Próxima</button>}
+      {hasPrevPage && (
+        <Button
+          style={{ marginRight: "8px" }}
+          variant="contained"
+          color="secondary"
+          onClick={onPrevPage}
+        >
+          Anterior
+        </Button>
+      )}
+      {hasNextPage && (
+        <Button variant="contained" color="secondary" onClick={onNextPage}>
+          Próxima
+        </Button>
+      )}
     </div>
   )
 }

@@ -6,11 +6,10 @@ import {
   CharactersList,
   Error,
   Loading,
-  NoData,
   PageCounter,
   Pagination,
 } from "../../components"
-import { CharactersPageStyled } from "./styles"
+import { CharactersPageStyled, PaginationInfoStyled } from "./styles"
 
 const CharactersPage = () => {
   const [page, setPage] = useState(1)
@@ -24,11 +23,11 @@ const CharactersPage = () => {
   }
 
   if (error) {
-    return <Error />
+    return <Error message="Ocorreu um erro" />
   }
 
   if (!data || !charactersData || charactersData.length === 0) {
-    return <NoData />
+    return <Error message="Nenhum dado encontrado" />
   }
 
   const totalPages = data.characters.info.pages
@@ -39,14 +38,18 @@ const CharactersPage = () => {
     <CharactersPageStyled>
       <CharactersList characters={charactersData} />
 
-      <Pagination
-        hasPrevPage={hasPrevPage}
-        hasNextPage={hasNextPage}
-        onPrevPage={() => setPage(page - 1)}
-        onNextPage={() => setPage(page + 1)}
-      />
+      <PaginationInfoStyled>
+        <div style={{ marginBottom: "16px" }}>
+          <Pagination
+            hasPrevPage={hasPrevPage}
+            hasNextPage={hasNextPage}
+            onPrevPage={() => setPage(page - 1)}
+            onNextPage={() => setPage(page + 1)}
+          />
+        </div>
 
-      <PageCounter currentPage={page} totalPages={totalPages} />
+        <PageCounter currentPage={page} totalPages={totalPages} />
+      </PaginationInfoStyled>
     </CharactersPageStyled>
   )
 }
