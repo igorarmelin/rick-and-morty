@@ -13,7 +13,7 @@ export const SectionStyled = styled.section`
   display: flex;
   align-items: start;
   justify-content: center;
-  padding: 24px;
+  padding: 48px 24px;
   background-color: #00bfff;
 `
 
